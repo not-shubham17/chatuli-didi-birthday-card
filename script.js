@@ -25,7 +25,6 @@ const $volumeBar = document.getElementById("volume-bar");
 const $candlesRow = document.getElementById("candles-row");
 const $btnGallery = document.getElementById("btn-gallery");
 const $gallery = document.getElementById("gallery-section");
-const $galleryTitle = document.getElementById("gallery-title");
 const $galleryMsg = document.getElementById("gallery-message");
 const $galleryGrid = document.getElementById("gallery-grid");
 const $btnBack = document.getElementById("btn-back");
@@ -47,7 +46,6 @@ let sustainCounter = 0;
 // ── 2. INIT — Apply config to DOM ─────────────
 (function init() {
   if ($modalTitle) $modalTitle.textContent = `Happy Birthday ${config.name}! 🎂`;
-  if ($galleryTitle) $galleryTitle.textContent = `${config.name}'s Special Moments ✨`;
   if ($galleryMsg) $galleryMsg.textContent = config.message;
 
   if ($galleryGrid) buildGallery();
