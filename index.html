@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🎂 Happy Birthday!</title>
+  <meta name="description"
+    content="An interactive E-Birthday Card — blow out the candles and explore a special photo gallery!" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Dancing+Script:wght@700&display=swap"
+    rel="stylesheet" />
+
+  <!-- Canvas Confetti CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ════════════ WELCOME MODAL ════════════ -->
+  <div id="modal-overlay" class="modal-overlay">
+    <div class="modal-card">
+      <div class="modal-emoji">🎉</div>
+      <h1 class="modal-title" id="modal-title">Happy Birthday!</h1>
+      <button id="btn-start" class="btn-primary">
+        <span class="btn-icon">🎤</span> Candles Blow kar !
+      </button>
+      <p class="modal-hint">
+        <span class="hint-icon">💡</span>
+      </p>
+    </div>
+  </div>
+
+  <!-- ════════════ CAKE SCENE ════════════ -->
+  <section id="cake-scene" class="cake-scene hidden">
+    <p class="blow-instruction" id="blow-instruction">🌬️ Blow into your mic to extinguish the candles!</p>
+
+    <!-- Volume meter -->
+    <div class="volume-meter">
+      <div class="volume-bar" id="volume-bar"></div>
+    </div>
+
+    <div class="cake-wrapper">
+      <!-- Candles -->
+      <div class="candles-row" id="candles-row">
+        <div class="candle">
+          <div class="flame lit"></div>
+          <div class="smoke-trail"></div>
+        </div>
+        <div class="candle">
+          <div class="flame lit"></div>
+          <div class="smoke-trail"></div>
+        </div>
+        <div class="candle">
+          <div class="flame lit"></div>
+          <div class="smoke-trail"></div>
+        </div>
+        <div class="candle">
+          <div class="flame lit"></div>
+          <div class="smoke-trail"></div>
+        </div>
+        <div class="candle">
+          <div class="flame lit"></div>
+          <div class="smoke-trail"></div>
+        </div>
+      </div>
+
+      <!-- Cake layers -->
+      <div class="cake">
+        <div class="cake-top">
+          <div class="drip drip-1"></div>
+          <div class="drip drip-2"></div>
+          <div class="drip drip-3"></div>
+          <div class="drip drip-4"></div>
+          <div class="drip drip-5"></div>
+        </div>
+        <div class="cake-middle"></div>
+        <div class="cake-bottom"></div>
+        <div class="cake-plate"></div>
+      </div>
+    </div>
+
+    <!-- Feeding Animation -->
+    <div id="feeding-animation" class="feeding-animation hidden">
+      <div class="cake-slice-emoji" id="cake-slice-emoji">🍰</div>
+      <div class="feed-text" id="feed-text">Aa! Khaa le! 😂</div>
+    </div>
+
+    <!-- Gift button (hidden until candles blown) -->
+    <button id="btn-gallery" class="btn-gift hidden">
+      🎁 Tujhe thode funny photos ->
+    </button>
+  </section>
+
+  <!-- ════════════ GALLERY ════════════ -->
+  <section id="gallery-section" class="gallery-section hidden">
+    <h2 class="gallery-title" id="gallery-title">Your Special Moments ✨</h2>
+    <p class="gallery-message" id="gallery-message"></p>
+    <div class="gallery-grid" id="gallery-grid"></div>
+    <button id="btn-back" class="btn-secondary">← Back to Cake</button>
+  </section>
+
+  <!-- Floating particles background -->
+  <div class="particles" id="particles"></div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
